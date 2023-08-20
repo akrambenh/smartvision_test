@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-void main() => runApp(const myApp());
-class myApp extends StatelessWidget {
-  const myApp({super.key});
+void main() => runApp(const MyApp());
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(home: VideoChat(),
@@ -19,10 +19,7 @@ class VideoChat extends StatefulWidget {
   @override
   State<VideoChat> createState() => _VideoChatState();
 }
-
 class _VideoChatState extends State<VideoChat> {
-  late var screenSize;
-  late var screenPadding;
   TextStyle boldStyle =  const TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20.0);
   TextStyle normalStyle =  const TextStyle(color: Colors.white, fontSize: 16.0);
   TextStyle whiteText =  const TextStyle(color: Colors.white, fontSize: 13.0, height: 1.4);
@@ -121,7 +118,7 @@ class _VideoChatState extends State<VideoChat> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height / 15,
                       child:
                       // This is the waves to represent audio built with multiple containers.
@@ -382,7 +379,7 @@ class _VideoChatState extends State<VideoChat> {
                     Text('02 : 30', style: normalStyle,),
                   ],),
               ),
-              // call buttons - switching to message button, turning mic on & off, call end button
+              // Call buttons - switching to message button, turning mic on & off, call end button
               Padding(
                 padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 17),
                 child: Row(
