@@ -55,11 +55,11 @@ class _VideoChatState extends State<VideoChat> {
                       children: <Widget>[
                         // Receptor Profile Pic
                         Container(
-                          width: MediaQuery.of(context).size.width / 2.6, height: MediaQuery.of(context).size.width / 2.6,
+                          width: MediaQuery.of(context).size.width / 2.8, height: MediaQuery.of(context).size.width / 2.8,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(70.0), border: Border.all(color: Colors.white)),
                           child: Center(
                             child: Container(
-                              width: MediaQuery.of(context).size.width / 3.0, height: MediaQuery.of(context).size.width / 3.0,
+                              width: MediaQuery.of(context).size.width / 3.2, height: MediaQuery.of(context).size.width / 3.2,
                               decoration: BoxDecoration(borderRadius: BorderRadius.circular(70.0) ,image: const DecorationImage(image: AssetImage('assets/receptor.jpg'), fit: BoxFit.cover)),
                             ),
                           ),
@@ -68,11 +68,11 @@ class _VideoChatState extends State<VideoChat> {
                         Padding(
                           padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 9.6, left: MediaQuery.of(context).size.width / 3.1),
                           child: Container(
-                            width: MediaQuery.of(context).size.width / 6, height: MediaQuery.of(context).size.width / 6,
+                            width: MediaQuery.of(context).size.width / 6.5, height: MediaQuery.of(context).size.width / 6.5,
                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(70.0), border: Border.all(color: Colors.white)),
                             child: Center(
                               child: Container(
-                                width: MediaQuery.of(context).size.width / 8, height: MediaQuery.of(context).size.width / 8,
+                                width: MediaQuery.of(context).size.width / 8.5, height: MediaQuery.of(context).size.width / 8.5,
                                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(70.0) ,image: const DecorationImage(image: AssetImage('assets/caller.jpg'), fit: BoxFit.cover)),
                               ),
                             ),
@@ -84,7 +84,7 @@ class _VideoChatState extends State<VideoChat> {
               ),
               // Caller/Receptor name
               Padding(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 70),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 40),
                 child: Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text('Abbas', style: boldStyle,),
@@ -123,7 +123,212 @@ class _VideoChatState extends State<VideoChat> {
                   children: <Widget>[
                     Container(
                       height: MediaQuery.of(context).size.height / 15,
-                      child: AudioWave(
+                      child:
+                      // This is the waves to represent audio built with multiple containers.
+                      // Comment This Widget & uncomment the AudioWave Widget if you want to se the result using a package.
+                      Row(mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 4,
+                            height: 100,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0, top: 15, bottom: 17),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0, top: 10, bottom: 8),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0, top: 4, bottom: 15),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0, top: 1, bottom: 20),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0, top: 10, bottom: 10),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0, top: 20, bottom: 0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0, top: 15, bottom: 10),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  bottom: 10),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 10),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 15, bottom: 5.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 0, bottom: 15.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 15.0, bottom: 0.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.white),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 0.0, bottom: 17.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 4.0, bottom: 5.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 14.0, bottom: 2.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 14.0, bottom: 2.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 0.0, bottom: 0.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 14.0, bottom: 12.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 0.0, bottom: 14.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 10, bottom: 10.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 12.0, bottom: 3.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 5.0, bottom: 0.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 2.0, bottom: 14.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5.0,  top: 9.0, bottom: 7.0),
+                            child: Container(
+                              width: 4,
+                              height: 100,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.0), color: Colors.grey),
+                            ),
+                          ),
+                        ],
+                      ),
+                        // This is the package of audio waves
+                      /*AudioWave(
                         height: MediaQuery.of(context).size.height / 15,
                         width: MediaQuery.of(context).size.width / 1.5,
                         spacing: 2.5,
@@ -164,13 +369,14 @@ class _VideoChatState extends State<VideoChat> {
                           AudioWaveBar(heightFactor: 0.9, color: Colors.grey),
                           AudioWaveBar(heightFactor: 0.7, color: Colors.grey),
                         ],
-                      ),
+                      ),*/
                     ),
                   ],
                 ),
               ),
+              // Call Duration
               Padding(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 20),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 25),
                 child: Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text('02 : 30', style: normalStyle,),
