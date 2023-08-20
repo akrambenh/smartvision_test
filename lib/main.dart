@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:audio_wave/audio_wave.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -20,9 +21,12 @@ class VideoChat extends StatefulWidget {
 }
 
 class _VideoChatState extends State<VideoChat> {
-  TextStyle myStyle =  const TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18.0);
-  TextStyle whiteText =  const TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15.0);
-  TextStyle greyText =  const TextStyle(fontWeight: FontWeight.bold, color: Colors.grey, fontSize: 15.0);
+  late var screenSize;
+  late var screenPadding;
+  TextStyle boldStyle =  const TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20.0);
+  TextStyle normalStyle =  const TextStyle(color: Colors.white, fontSize: 16.0);
+  TextStyle whiteText =  const TextStyle(color: Colors.white, fontSize: 13.0, height: 1.4);
+  TextStyle greyText =  const TextStyle(color: Colors.grey, fontSize: 13.0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,43 +35,44 @@ class _VideoChatState extends State<VideoChat> {
         decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)
         ),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 20.0),
+          filter: ImageFilter.blur(sigmaX: 40.0, sigmaY: 40.0),
           child: Column(
             children: <Widget>[
               // "In Call With" Header
               Padding(
-                padding: const EdgeInsets.only(top: 100.0),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 16),
                 child: Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-                  Text('In Call With', style: myStyle,),
+                  Text('In Call With', style: normalStyle,),
                 ],),
               ),
               // Profile pictures of both call ends (caller and receptor)
               Padding(
-                padding: const EdgeInsets.only(top: 20.0),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 27),
                 child: Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Stack(
+                      alignment: Alignment.center,
                       children: <Widget>[
                         // Receptor Profile Pic
                         Container(
-                          width: 140.0, height: 140.0,
+                          width: MediaQuery.of(context).size.width / 2.6, height: MediaQuery.of(context).size.width / 2.6,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(70.0), border: Border.all(color: Colors.white)),
                           child: Center(
                             child: Container(
-                              width: 120.0, height: 120.0,
+                              width: MediaQuery.of(context).size.width / 3.0, height: MediaQuery.of(context).size.width / 3.0,
                               decoration: BoxDecoration(borderRadius: BorderRadius.circular(70.0) ,image: const DecorationImage(image: AssetImage('assets/receptor.jpg'), fit: BoxFit.cover)),
                             ),
                           ),
                         ),
                         // Caller Profile Pic
                         Padding(
-                          padding: const EdgeInsets.only(top: 100.0, left: 90.0),
+                          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 9.6, left: MediaQuery.of(context).size.width / 3.1),
                           child: Container(
-                            width: 60.0, height: 60.0,
+                            width: MediaQuery.of(context).size.width / 6, height: MediaQuery.of(context).size.width / 6,
                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(70.0), border: Border.all(color: Colors.white)),
                             child: Center(
                               child: Container(
-                                width: 45.0, height: 45.0,
+                                width: MediaQuery.of(context).size.width / 8, height: MediaQuery.of(context).size.width / 8,
                                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(70.0) ,image: const DecorationImage(image: AssetImage('assets/caller.jpg'), fit: BoxFit.cover)),
                               ),
                             ),
@@ -77,35 +82,32 @@ class _VideoChatState extends State<VideoChat> {
                     )
                   ],),
               ),
-              // Call duration
+              // Caller/Receptor name
               Padding(
-                padding: const EdgeInsets.only(top: 15.0),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 70),
                 child: Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('01:56', style: myStyle,),
+                  Text('Abbas', style: boldStyle,),
                 ],),
               ),
               // Speech to Text
               Padding(
-                padding: const EdgeInsets.only(top: 15.0),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 40),
                 child: Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Stack(
                       children: <Widget>[
-                        Container(width: 280.0, height: 150.0,
+                        Container(width: MediaQuery.of(context).size.width / 1.1, height: MediaQuery.of(context).size.height / 4.1,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0), color: Colors.grey[200]?.withOpacity(0.15)),
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: SingleChildScrollView(
+                            padding: EdgeInsets.all(MediaQuery.of(context).size.width / 30),
                               child: RichText(
-                                text: TextSpan(text: 'It was a pleasure to do business with you, and thats what i was looking', style: whiteText,
+                                text: TextSpan(text: 'Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor \nincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud', style: whiteText,
                                 children: [
-                                  TextSpan(text: ' for since we started our late project. I just hope that we can meet again and discuss other bright ideas.'
-                                      ' Dont forget to hit me with a text once you get to town maybe we can go grab some drinks om me',
+                                  TextSpan(text: ' exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
                                       style: greyText)
                                 ]),
                               ),
-                            ),
                           )
                         ),
                       ],
@@ -115,16 +117,15 @@ class _VideoChatState extends State<VideoChat> {
               ),
               // audio waveform using a package
               Padding(
-                padding: const EdgeInsets.only(top: 45.0),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      width: 210.0,
-                      height: 50.0,
+                      height: MediaQuery.of(context).size.height / 15,
                       child: AudioWave(
-                        height: 48,
-                        width: 210,
+                        height: MediaQuery.of(context).size.height / 15,
+                        width: MediaQuery.of(context).size.width / 1.5,
                         spacing: 2.5,
                         animation: false,
                         bars: [
@@ -168,27 +169,35 @@ class _VideoChatState extends State<VideoChat> {
                   ],
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 20),
+                child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('02 : 30', style: normalStyle,),
+                  ],),
+              ),
               // call buttons - switching to message button, turning mic on & off, call end button
               Padding(
-                padding: const EdgeInsets.only(top: 45.0),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 17),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     // switching to message button
                     Container(decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: const [BoxShadow(color: Colors.grey, blurRadius: 60.0,)]),
+                        boxShadow: const [BoxShadow(color: Colors.grey, blurRadius: 100.0,)]),
                         child: FloatingActionButton(onPressed: (){}, backgroundColor: Colors.grey, child: const Icon(Iconsax.message),)),
                     //turning mic on & off
-                    Container(decoration: BoxDecoration(
+                    Container(width: MediaQuery.of(context).size.width / 5, height: MediaQuery.of(context).size.width / 5,decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: const [BoxShadow(color: Colors.blue, blurRadius: 60.0,)]),
-                        child: FloatingActionButton(onPressed: (){}, child: const Icon(Iconsax.microphone),)),
+                        boxShadow: const [BoxShadow(color: Colors.blue, blurRadius: 100.0,)]),
+
+                        child: FloatingActionButton(onPressed: (){}, child: const Icon(Iconsax.microphone),),),
                     //call end button
                     Container(decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: const [BoxShadow(color: Colors.red, blurRadius: 60.0,)]),
-                        child: FloatingActionButton(onPressed: (){}, backgroundColor: Colors.red, child: const Icon(Iconsax.stop),)),
+                        boxShadow: const [BoxShadow(color: Colors.red, blurRadius: 100.0,)]),
+                        child: FloatingActionButton(onPressed: (){}, backgroundColor: Colors.red, child: const Icon(CupertinoIcons.phone_down_fill),)),
                   ],
                 ),
               )
